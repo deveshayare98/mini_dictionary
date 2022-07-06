@@ -17,7 +17,7 @@ class SearchPage extends Component{
 
 
     onChangeTextBox=(e)=>{
-        this.setState({text:e.target.value})
+        this.setState({text:e.target.value,error:false})
     }
 
     onClickSearch=()=>{
@@ -38,7 +38,7 @@ class SearchPage extends Component{
     }
 
     onkeydown=(event)=>{
-        console.log("event=======>",event);
+        // console.log("event=======>",event);
         if(event && event.keyCode==13 ){
             this.onClickSearch()
         }
@@ -48,8 +48,8 @@ class SearchPage extends Component{
         return(
             <div className='main-contariner'>
                 <div className='search-container'>
-                    <input className='searchbox' type="text" placeholder='Type here...' value={this.state.text} onKeyDown={(e)=>{this.onkeydown(e)}} onChange={(e)=>{this.onChangeTextBox(e)}} />
-                    <button className='search-button' onClick={()=>{this.onClickSearch()}}>Search</button>
+                    <input className='searchbox' data-testid='input' type="text" placeholder='Type here...' value={this.state.text} onKeyDown={(e)=>{this.onkeydown(e)}} onChange={(e)=>{this.onChangeTextBox(e)}} />
+                    <button data-testid='search' className='search-button' onClick={()=>{this.onClickSearch()}}>Search</button>
                 </div>
                 {this.state.result.length>0 &&  this.state.result.map((fact,index)=>{
                     return(
@@ -58,7 +58,7 @@ class SearchPage extends Component{
                             <div className='header'>
                                 {fact.phonetics!==undefined && fact.phonetics!==null && fact.phonetics.length>0 && 
                                 <span className='audio'>
-                                    <img src={'./audio.jpg'} onClick={()=>{this.onClickPlay(fact.phonetics)}}/>
+                                    <img src={process.env.PUBLIC_URL + '/img/audio.jpg'} onClick={()=>{this.onClickPlay(fact.phonetics)}}/>
                                     <audio id='yourAudioTag' className='audio-img' />
                                 </span>
                                 }
