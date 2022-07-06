@@ -1,0 +1,116 @@
+.main-contariner {
+    position: relative;
+    top: 70px;
+}
+
+.main-contariner .search-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+input.searchbox {
+    width: 300px;
+    margin-right: 20px;
+    border-style: none;
+    border-bottom: 1px solid gray;
+    height: 25px;
+    font-size: 20px;
+}
+
+input:focus{
+    outline: none;
+}
+
+
+button.search-button {
+    background-color: cornflowerblue;
+    width: 110px;
+    font-size: 20px;
+    border-style: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.result-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.header .audio img {
+    height: 30px;
+}
+
+.result-container .header {
+    display: flex;
+    flex-direction: row;
+    margin-left: 388px;
+    margin-top: 20px;
+}
+
+
+.result-container .header span.audio {
+    margin-right: 10px;
+}
+
+.result-container .header .title {
+    font-size: 25px;
+}
+
+.list-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 388px;
+    margin-top: 20px;
+}
+
+.list-container .title-type {
+    display: flex;
+    font-style: italic;
+}
+
+.order-list li.row {
+    display: list-item;
+    text-align: initial;
+}
+
+.order-list li.row .example {
+    color: gray;
+}
+
+.error-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 56px;
+}
+
+
+
+@media (max-width: 800px) {
+
+    .result-container {
+        margin-left: -370px;
+        width: auto;
+    }
+    .main-contariner .search-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button .search-button{
+        margin-top: 20px;
+    }
+
+    input.searchbox{
+        margin-bottom: 20px;
+    }
+
+
+}
